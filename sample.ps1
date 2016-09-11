@@ -15,4 +15,10 @@ $x.Results.TimeSpan.Latency.AverageTotalMilliseconds
 $x.Results.TimeSpan.Latency.AverageReadMilliseconds
 $x.Results.TimeSpan.Latency.AverageWriteMilliseconds
 
+<#
+Simple filters
+#>
+Get-Service | where {$_.Status -eq "stopped"}
+Get-Service | where {$_.Status -eq "Running"}
+
 
