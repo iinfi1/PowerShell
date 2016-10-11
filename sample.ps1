@@ -22,3 +22,7 @@ Get-Service | where {$_.Status -eq "stopped"}
 Get-Service | where {$_.Status -eq "Running"}
 
 
+<#Get info from all Computers in the Active Directory#>
+Get-ADComputer -Filter * | select -Property @{n='ComputerName' ;e={$_.name}} | Get-Service -Name bits
+
+
